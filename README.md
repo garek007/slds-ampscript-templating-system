@@ -3,6 +3,8 @@ The goal of this is to make it easier to build complex markup in MC without havi
 
 We declare variables in the SLDS Globals file, so that you don't have to remember Content Block IDs. Ultimately, this may have worked better using ContentBlockByName with a predictable file structure. 
 
+For this to work you'll obviously have to include the SLDS css in the head of your document. 
+
 ## Usage
 ```
 %%[
