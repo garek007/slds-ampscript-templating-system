@@ -1,0 +1,22 @@
+<div class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-top_',@bottompad),'')=%%">
+    <label class="slds-form-element__label" for="%%=v(@id)=%%">
+    %%[if @required == 'true' Then]%%
+        <abbr class="slds-required" title="required">* </abbr>
+    %%[endif]%%  
+    %%=v(@label)=%%
+    </label>
+    <div class="slds-form-element__control">
+        <div class="slds-select_container">
+            <select class="slds-select" id="%%=v(@id)=%%" name="%%=v(@id)=%%" %%=IIF(@required=='true','required','')=%% data-object="%%=v(@object)=%%">
+                
+                %%[
+                
+                for @o = 1 to RowCount(@options) do ]%%
+                    <option value="%%=Field(Row(@options,@o),1)=%%">%%=Field(Row(@options,@o),1)=%%</option>
+                %%[
+                next @o]%%
+                
+            </select>
+        </div>
+    </div>
+</div>

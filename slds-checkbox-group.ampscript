@@ -1,0 +1,28 @@
+%%[
+Set @nameid = Replace(Replace(@label,' ',''),'?','')
+]%%
+<fieldset class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-top_',@bottompad),'')=%%" id="%%=v(@id)=%%">
+    <legend class="slds-form-element__legend slds-form-element__label">
+     %%[if @required == 'true' Then]%%
+       <abbr class="slds-required" title="required">* </abbr>
+     %%[endif]%%         
+ %%=v(@label)=%%</legend>
+    <div class="slds-form-element__control">
+      %%[for @radio = 1 to RowCount(@options) do
+          Set @current = Field(Row(@options,@radio),1)
+          Set @radioid = Concat('radio-',Replace(Field(Row(@options,@radio),1),' ',''),'-',Random(1,100000))
+          /*Need to find a better way than random, should maybe do something with loop index
+            If this is Yes|No and there are two on a page we could have problems.
+            The odds of choosing the same number are slim, but it could happen
+          */
+      ]%%       
+      <div class="slds-checkbox">
+        <input type="checkbox" name="options" id="%%=v(@radioid)=%%" value="%%=v(@current)=%%" %%=IIF(@required=='true','required','')=%%/>
+        <label class="slds-checkbox__label" for="%%=v(@radioid)=%%">
+        <span class="slds-checkbox_faux"></span>
+        <span class="slds-form-element__label">%%=v(@current)=%%</span>
+        </label>
+      </div>
+      %%[next @radio]%%
+    </div>
+</fieldset>

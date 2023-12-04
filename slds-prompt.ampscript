@@ -1,0 +1,22 @@
+
+    <section role="dialog" tabindex="0" aria-modal="true" aria-labelledby="prompt-heading-id"
+      aria-describedby="prompt-message-wrapper" class="slds-modal slds-modal_prompt %%=v(@promptClass)=%%">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header %%=Concat('slds-theme_',@promptType)=%% slds-theme_alert-texture">
+          <h1 class="slds-text-heading_medium" id="prompt-heading-id">%%=v(@promptHeading)=%%</h1>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+          <p>%%=v(@promptText)=%%</p>
+            %%[if Not Empty(@promptImage) Then]%%
+          <div class="image-holder">
+          <img style="display:block" src="%%=v(@promptImage)=%%"/>
+          </div>
+          %%[endif]%%
+          
+        </div>
+        <div class="slds-modal__footer slds-theme_default">
+          <button class="slds-button slds-button_neutral got-it">Got It</button>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop %%=v(@promptClass)=%%" role="presentation"></div>

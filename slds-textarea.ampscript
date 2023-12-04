@@ -1,0 +1,14 @@
+<div class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-top_',@bottompad),'')=%%">
+<label class="slds-form-element__label" for="%%=v(@id)=%%">
+  
+      %%[if @required == 'true' Then]%%
+  <abbr class="slds-required" title="required">* </abbr>
+    %%[endif]%%  
+  
+  %%=v(@label)=%%
+  
+  </label>
+<div class="slds-form-element__control">
+<textarea id="%%=v(@id)=%%" name="%%=v(@id)=%%" %%=IIF(@required=='true','required','')=%% %%=IIF(Empty(@placeholder),'',Concat('placeholder="',@placeholder,'"'))=%% class="slds-textarea"></textarea>
+</div>
+</div>

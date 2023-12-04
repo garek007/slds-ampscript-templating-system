@@ -1,0 +1,29 @@
+%%[
+/*The accept stuff is in case you want to use a text input as a file upload input*/
+If Not Empty(@inputAccept) Then
+  Set @accept = Concat('accept="',@accept,'"')
+endif
+
+]%%
+
+
+<div class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-bottom_',@bottompad),'')=%%">
+    <span class="slds-form-element__label" id="file-selector-primary-label-101">%%=v(@outerLabel)=%%</span>
+    <div class="slds-form-element__control">
+        <div class="slds-file-selector slds-file-selector_files">
+            <div class="slds-file-selector__dropzone">
+                <input type="file" class="slds-file-selector__input slds-assistive-text" accept="%%=v(@accept)=%%"
+                    id="%%=v(@id)=%%" name="%%=v(@id)=%%"
+                    aria-labelledby="file-selector-primary-label-101 file-selector-secondary-label102" />
+                <label class="slds-file-selector__body" for="%%=v(@id)=%%"
+                    id="file-selector-secondary-label102">
+                    <span class="slds-file-selector__button slds-button slds-button_neutral">
+                        <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                            <use xlink:href="https://careers.mail.salesforce.com/slds-symbols.svg#upload"></use>
+                        </svg>%%=v(@label)=%%</span>
+                    <span class="slds-file-selector__text slds-medium-show" >No File</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

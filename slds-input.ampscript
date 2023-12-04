@@ -1,0 +1,20 @@
+%%[
+/*The accept stuff is in case you want to use a text input as a file upload input*/
+If Not Empty(@inputAccept) Then
+  Set @accept = Concat('accept="',@accept,'"')
+endif
+]%%
+<div class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-bottom_',@bottompad),'')=%%">
+  <label class="slds-form-element__label" for="%%=v(@id)=%%">
+     
+    %%=v(@label)=%%
+  
+    %%[if @required == 'true' Then]%%
+  <abbr class="slds-required" title="required">* </abbr>
+    %%[endif]%%    
+  
+  </label>
+  <div class="slds-form-element__control">
+  <input type="%%=IIF(Empty(@inputType),'text',@inputType)=%%" %%=v(@accept)=%% id="%%=v(@id)=%%" name="%%=v(@id)=%%" %%=IIF(@required=='true','required','')=%% class="slds-input" %%=IIF(Empty(@placeholder),'',Concat('placeholder="',@placeholder,'"'))=%% data-object="%%=v(@object)=%%" %%=IIF(Not Empty(@maxlength),Concat('maxlength="',@maxlength,'"'),'')=%%/>
+  </div>
+</div>

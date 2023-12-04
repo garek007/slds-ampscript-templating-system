@@ -1,0 +1,7 @@
+<div class="%%=IIF(Not Empty(@saBorders),@saBorders,'')=%% slds-setup-assistant__step-summary-content slds-media__body slds-col slds-medium-size_1-of-1 %%=IIF(Not Empty(@saPadding),@saPadding,'')=%% %%=IIF(Not Empty(@saMargin),@saMargin,'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%%">
+  %%[If Not Empty(@saTitle) Then]%%
+   <h3 class="slds-setup-assistant__step-summary-title slds-text-heading_small">%%=v(@saTitle)=%%</h3>
+  %%[endif]%%
+   <p>%%=v(@saBody)=%%
+   </p>
+</div>  

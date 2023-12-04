@@ -1,0 +1,28 @@
+%%[
+/*Set @nameid = Replace(Replace(@label,' ',''),'?','')*/
+]%%
+<fieldset class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-top_',@bottompad),'')=%%" id="%%=v(@id)=%%">
+    <legend class="slds-form-element__legend slds-form-element__label">
+     %%=v(@label)=%%
+      
+      %%[if @required == 'true' Then]%%
+       <abbr class="slds-required" title="required">* </abbr>
+     %%[endif]%%    
+        
+    </legend>
+    <div class="slds-form-element__control">
+      %%[for @radio = 1 to RowCount(@options) do
+          Set @current = Field(Row(@options,@radio),1)
+          /*Set @radioid = Concat('radio-',Replace(Field(Row(@options,@radio),1),' ',''),'-',Random(1,100000))*/
+          Set @radioid = Concat(@name,@radio)
+      ]%%      
+        <span class="slds-radio">
+            <input type="radio" name="%%=v(@name)=%%" id="%%=v(@radioid)=%%" value="%%=v(@current)=%%" %%=IIF(@required=='true','required','')=%% data-object="%%=v(@object)=%%"/>
+            <label class="slds-radio__label" for="%%=v(@radioid)=%%">
+                <span class="slds-radio_faux"></span>
+                <span class="slds-form-element__label">%%=v(@current)=%%</span>
+            </label>
+        </span>
+      %%[next @radio]%%
+    </div>
+</fieldset>

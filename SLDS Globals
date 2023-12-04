@@ -1,0 +1,30 @@
+%%[
+Set @input = 572879
+Set @text = 572879/*By adding another var, they can call this either way*/
+Set @textarea = 577146
+Set @checkbox = 574522
+Set @select = 572880
+Set @cta = 573091
+Set @summaryDetail = 575541
+Set @radioGroup = 576504
+Set @checkboxGroup = 579901
+Set @radioButtonGroup = 576148
+Set @expandableSection = 575681
+Set @autofillCountriesInput = 573098
+Set @spinner = 577147
+Set @modal = 579501
+Set @setupAssistant = 579892
+Set @toast = 583611
+Set @fileSelector = 597211
+Set @countrySelect = 604947
+Set @linkedInAutofill = 603074
+Set @submitButton = 612447
+Set @formMenusId = 6303 /* CloudPages Id for form menus code resource */
+
+
+Set @gatagmain = 617221
+Set @wtldynamicform = 623476
+Set @wtlstaticform = 621818 /*Currently for use in Evergreen pages only */
+Set @wtlcontentdynamic = 623478
+Set @privacyStatement = 608182
+]%%

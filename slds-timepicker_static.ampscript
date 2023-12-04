@@ -1,0 +1,85 @@
+<div class="slds-form-element">
+    <label class="slds-form-element__label" for="example-unique-id-33" id="combobox-label-id-14">Time</label>
+    <div class="slds-form-element__control">
+        <div class="slds-combobox_container">
+            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-timepicker">
+                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                    <input type="text" class="slds-input slds-combobox__input" id="example-unique-id-33"
+                        aria-activedescendant="" aria-autocomplete="list" aria-controls="example-unique-id-34"
+                        aria-expanded="false" aria-haspopup="listbox" autoComplete="off" role="combobox"
+                        placeholder="Select a time…" value="" />
+                    <span class="slds-icon_container slds-icon-utility-clock slds-input__icon slds-input__icon_right">
+                        <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clock"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div id="example-unique-id-34" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+                    role="listbox">
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        <li role="presentation" class="slds-listbox__item">
+                            <div id="option1"
+                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                role="option">
+                                <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                <span class="slds-media__body">
+                                    <span class="slds-truncate" title="7:00am">7:00am</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                            <div id="option2"
+                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                role="option">
+                                <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                <span class="slds-media__body">
+                                    <span class="slds-truncate" title="8:00am">8:00am</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                            <div id="option3"
+                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                role="option">
+                                <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                <span class="slds-media__body">
+                                    <span class="slds-truncate" title="9:00am">9:00am</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                            <div id="option4"
+                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                role="option">
+                                <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                <span class="slds-media__body">
+                                    <span class="slds-truncate" title="10:00am">10:00am</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                            <div id="option5"
+                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                role="option">
+                                <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                <span class="slds-media__body">
+                                    <span class="slds-truncate" title="11:00am">11:00am</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                            <div id="option6"
+                                class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                role="option">
+                                <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                <span class="slds-media__body">
+                                    <span class="slds-truncate" title="12:00pm">12:00pm</span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

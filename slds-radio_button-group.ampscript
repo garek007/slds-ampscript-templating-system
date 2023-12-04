@@ -1,0 +1,30 @@
+%%[
+Set @nameid = Replace(Replace(Replace(Replace(@label,' ',''),'?',''),'(',''),')','')
+]%%
+<fieldset class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-around_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%% %%=IIF(Not Empty(@classes),@classes,'')=%% %%=IIF(Not Empty(@bottompad),Concat('slds-p-top_',@bottompad),'')=%" id="%%=v(@id)=%%">
+  <legend class="slds-form-element__legend slds-form-element__label">
+     %%[if @required == 'true' Then]%%
+       <abbr class="slds-required" title="required">* </abbr>
+     %%[endif]%%    
+    %%=v(@label)=%%</legend>
+  <div class="slds-form-element__control">
+    <div class="slds-radio_button-group">
+      %%[for @radio = 1 to RowCount(@options) do
+          Set @current = Field(Row(@options,@radio),1)
+          Set @radioid = Concat('radio-',Replace(Field(Row(@options,@radio),1),' ',''),'-',Random(1,100000))
+          /*Need to find a better way than random, should maybe do something with loop index
+            If this is Yes|No and there are two on a page we could have problems.
+            The odds of choosing the same number are slim, but it could happen
+          */
+      ]%%   
+      <span class="slds-button slds-radio_button slds-p-around_none">
+        <input type="radio" name="%%=v(@nameid)=%%" id="%%=v(@radioid)=%%" value="%%=v(@current)=%%" %%=IIF(@required=='true','required','')=%%/>
+        <label class="slds-radio_button__label" for="%%=v(@radioid)=%%">
+          <span class="slds-radio_faux">%%=v(@current)=%%</span>
+        </label>
+      </span>
+      %%[next @radio]%%
+
+    </div>
+  </div>
+</fieldset> 

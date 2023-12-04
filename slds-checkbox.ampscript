@@ -1,0 +1,14 @@
+<div class="slds-form-element %%=IIF(Not Empty(@padding),Concat('slds-p-bottom_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%%">
+  <div class="slds-form-element__control">
+    <div class="slds-checkbox">
+      %%[if @required == 'true' Then]%%
+         <abbr class="slds-required" title="required">* </abbr>
+      %%[endif]%%          
+      <input type="checkbox" name="options" id="%%=v(@id)=%%" value="%%=v(@id)=%%" %%=IIF(@checked == 'true','checked','')=%%/>
+      <label class="slds-checkbox__label" for="%%=v(@id)=%%">
+        <span class="slds-checkbox_faux"></span>
+        <span class="slds-form-element__label">%%=v(@label)=%%</span>
+      </label>
+    </div>
+  </div>
+</div>

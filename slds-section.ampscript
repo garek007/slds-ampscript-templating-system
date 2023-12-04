@@ -1,0 +1,18 @@
+
+<div class="slds-section slds-is-open %%=IIF(Not Empty(@bottompad),Concat('slds-p-bottom_',@bottompad),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%%">
+  <h3 class="slds-section__title %%=IIF(@collabsible != 'true','slds-theme_shade','')=%%">
+    %%[if @collabsible == 'true' Then]%%
+    <button aria-controls="expando-unique-id" aria-expanded="true" class="slds-button slds-section__title-action">
+      <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+      </svg>
+      %%[endif]%%
+    <span class="slds-truncate %%=IIF(@collabsible != 'true','slds-p-horizontal_small','')=%%" title="Section Title">%%=v(@sectionTitle)=%%</span>
+      %%[if @collabsible == 'true' Then]%%
+      </button>
+      %%[endif]%%
+  </h3>
+  <div aria-hidden="false" class="slds-section__content" %%[if @collabsible == 'true' Then]%% id="%%=v(@id)=%%" %%[endif]%%>
+    <p>%%=v(@sectionContent)=%%</p>
+  </div>
+</div>

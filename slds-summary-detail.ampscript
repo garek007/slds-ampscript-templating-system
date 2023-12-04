@@ -1,0 +1,23 @@
+<div
+    class="slds-summary-detail %%=IIF(Not Empty(@padding),Concat('slds-p-bottom_',@padding),'')=%% %%=IIF(Not Empty(@toppad),Concat('slds-p-top_',@toppad),'')=%%">
+    <button class="slds-button slds-button_icon slds-m-right_x-small" title="Toggle details for Summary Title"
+        aria-controls="expando-unique-id" aria-expanded="false">
+        <svg class="slds-button__icon slds-summary-detail__action-icon" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+        </svg>
+        <span class="slds-assistive-text">%%=v(@assistive)=%%</span>
+    </button>
+    <div>
+        <div class="slds-summary-detail__title">
+            <div class="slds-grid">
+                <h3 class="slds-text-heading_small slds-truncate slds-p-right_small" title="summary title">
+                    %%=v(@summaryTitle)=%%</h3>
+                <span class="slds-badge"> %%=v(@badge)=%%</span>
+            </div>
+            <p>%%=v(@summaryContent)=%%</p>
+        </div>
+        <div aria-hidden="true" class="slds-summary-detail__content" id="expando-unique-id">
+            <p>%%=v(@summaryContent)=%%</p>
+        </div>
+    </div>
+</div>
