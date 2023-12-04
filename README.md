@@ -1,6 +1,8 @@
 # SLDS Templating System for Marketing cloud
 The goal of this is to make it easier to build complex markup in MC without having to wade through so much code. It has been tricky because if you change one thing it cascades and you can break all of your stuff. I need to create some documentation for this, just not sure this idea is worthwhile...
 
+We declare variables in the SLDS Globals file, so that you don't have to remember Content Block IDs. Ultimately, this may have worked better using ContentBlockByName with a predictable file structure. 
+
 ## Usage
 ```
 %%[
