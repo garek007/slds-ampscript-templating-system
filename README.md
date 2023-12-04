@@ -2,6 +2,7 @@
 The goal of this is to make it easier to build complex markup in MC without having to wade through so much code. It has been tricky because if you change one thing it cascades and you can break all of your stuff. I need to create some documentation for this, just not sure this idea is worthwhile...
 
 ## Usage
+```
 %%[
 Set @id = 'CampaignID'
 Set @label = 'Campaign ID'
@@ -10,9 +11,8 @@ Set @toppad = 'large'
 Set @padding = 'large'
 Set @classes = 'slds-col slds-medium-size_1-of-2 slds-size_1-of-1'
 Output(ContentBlockById(@input))
-
 ]%%
-
+```
 ## This will call the slds-input.ampscript file given this code
 ```
 %%[
