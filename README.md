@@ -15,6 +15,13 @@ Set @toppad = 'large'
 Set @padding = 'large'
 Set @classes = 'slds-col slds-medium-size_1-of-2 slds-size_1-of-1'
 Output(ContentBlockById(@input))
+
+Set @id = 'member-status'
+Set @label = 'Member Status'
+Set @required = 'false'
+Set @optionList = '-- Select --|Responded|Registered|Attended'
+Set @options = BuildRowSetFromString(@optionList,'|')
+Output(ContentBlockById(@select)) 
 ]%%
 ```
 ## This will call the slds-input.ampscript file given this code
